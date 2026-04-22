@@ -4,10 +4,6 @@ services:
     ports:
       - "80:80"
     environment:
-      # Lokale Nutzung (Standard):
-      - KURSWAHL_URL=http://localhost:3001
-      - NACHSCHREIBER_URL=http://localhost:3002
-      # Externe Nutzung (z.B. mit CloudFlare Tunnel) — Zeilen oben auskommentieren und diese einkommentieren:
-      # - KURSWAHL_URL=https://kurswahl.hurrikap.org
-      # - NACHSCHREIBER_URL=https://nachschreiber.hurrikap.org
+      - KURSWAHL_URL=${KURSWAHL_URL:-http://localhost:3001}
+      - NACHSCHREIBER_URL=${NACHSCHREIBER_URL:-http://localhost:3002}
     restart: unless-stopped
