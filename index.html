@@ -27,12 +27,12 @@
   <h1>Schulportal</h1>
   <p class="subtitle">Interne Werkzeuge für Lehrkräfte</p>
   <div class="grid">
-    <a class="card" href="${KURSWAHL_URL}">
+    <a class="card" id="link-kurswahl" href="#">
       <div class="card-icon">📚</div>
       <div class="card-title">Kurswahl</div>
       <div class="card-desc">Automatische Kurszuweisung für Schüler per Optimierungsalgorithmus.</div>
     </a>
-    <a class="card" href="${NACHSCHREIBER_URL}">
+    <a class="card" id="link-nachschreiber" href="#">
       <div class="card-icon">✏️</div>
       <div class="card-title">Nachschreiber</div>
       <div class="card-desc">Sitzplanerstellung und Raumverwaltung für Nachschreibtermine.</div>
@@ -42,6 +42,10 @@
     (function () {
       const dark = localStorage.getItem('theme') !== 'light';
       document.documentElement.classList.toggle('dark', dark);
+
+      const base = window.location.protocol + '//' + window.location.hostname;
+      document.getElementById('link-kurswahl').href = base + ':3001';
+      document.getElementById('link-nachschreiber').href = base + ':3002';
     })();
     function toggleDark() {
       const isDark = document.documentElement.classList.toggle('dark');

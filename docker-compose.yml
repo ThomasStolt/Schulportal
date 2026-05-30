@@ -3,7 +3,4 @@ services:
     build: .
     ports:
       - "80:80"
-    environment:
-      - KURSWAHL_URL=${KURSWAHL_URL:-http://localhost:3001}
-      - NACHSCHREIBER_URL=${NACHSCHREIBER_URL:-http://localhost:3002}
     restart: unless-stopped
