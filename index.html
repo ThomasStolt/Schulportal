@@ -43,9 +43,15 @@
       const dark = localStorage.getItem('theme') !== 'light';
       document.documentElement.classList.toggle('dark', dark);
 
-      const base = window.location.protocol + '//' + window.location.hostname;
-      document.getElementById('link-kurswahl').href = base + ':3001';
-      document.getElementById('link-nachschreiber').href = base + ':3002';
+      const proto = window.location.protocol;
+      const host = window.location.hostname;
+      function serviceUrl(subdomain, port) {
+        if (host.startsWith('schulportal.'))
+          return proto + '//' + subdomain + '.' + host.slice('schulportal.'.length);
+        return proto + '//' + host + ':' + port;
+      }
+      document.getElementById('link-kurswahl').href = serviceUrl('kurswahl', 3001);
+      document.getElementById('link-nachschreiber').href = serviceUrl('nachschreiber', 3002);
     })();
     function toggleDark() {
       const isDark = document.documentElement.classList.toggle('dark');
