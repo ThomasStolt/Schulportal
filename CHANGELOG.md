@@ -5,6 +5,16 @@ Alle relevanten Änderungen an Schulportal werden in dieser Datei dokumentiert.
 Das Format orientiert sich an [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
 die Versionierung folgt [Semantic Versioning](https://semver.org/lang/de/).
 
+## [1.2.0] — 2026-05-30
+
+### Hinzugefügt
+- **Einheitlicher Header** — gleicher Stil wie Kurswahl und Nachschreiber: Amber-Logo-Badge (`SP`), App-Name in Bricolage Grotesque, Versions-Badge, SVG-Dark-Mode-Toggle. Sticky mit Backdrop-Blur.
+- **Versionsnummer** — wird als `v1.2.0`-Badge im Header angezeigt.
+
+### Geändert
+- **Dark-Mode-Toggle** — von Emoji (☀️) auf SVG-Icons (Sonne/Mond) umgestellt, Icon wechselt automatisch mit dem Theme ohne JavaScript.
+- Seitenstruktur von reinem `<body>`-Flex-Layout auf Header + `<main>` umgestellt.
+
 ## [1.1.0] — 2026-05-30
 
 ### Sicherheit
